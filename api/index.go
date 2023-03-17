@@ -1,4 +1,4 @@
-package main
+package handler
 
 import (
 	"html/template"
@@ -19,7 +19,7 @@ func renderTemplate(w http.ResponseWriter) {
 	}
 }
 
-func main() {
+func Handler() {
 	http.HandleFunc("/", viewHandler)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
