@@ -10,10 +10,10 @@ func viewHandler(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w)
 }
 
-var templates = template.Must(template.ParseFiles("index.html"))
+var templates = template.Must(template.ParseFiles("profile.html"))
 
 func renderTemplate(w http.ResponseWriter) {
-	err := templates.ExecuteTemplate(w, "index.html", "Hello World!")
+	err := templates.ExecuteTemplate(w, "profile.html", "Hello World!")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
