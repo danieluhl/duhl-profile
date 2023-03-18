@@ -1,25 +1,36 @@
 package handler
 
 import (
-	"html/template"
-	"log"
+	"fmt"
 	"net/http"
 )
 
-func viewHandler(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w)
+func Handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "<h1>Hello from Go!</h1>")
 }
 
-var templates = template.Must(template.ParseFiles("profile.html"))
+// package handler
 
-func renderTemplate(w http.ResponseWriter) {
-	err := templates.ExecuteTemplate(w, "profile.html", "Hello World!")
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-	}
-}
+// import (
+// 	"html/template"
+// 	"log"
+// 	"net/http"
+// )
 
-func Handler() {
-	http.HandleFunc("/", viewHandler)
-	log.Fatal(http.ListenAndServe(":8080", nil))
-}
+// func viewHandler(w http.ResponseWriter, r *http.Request) {
+// 	renderTemplate(w)
+// }
+
+// var templates = template.Must(template.ParseFiles("profile.html"))
+
+// func renderTemplate(w http.ResponseWriter) {
+// 	err := templates.ExecuteTemplate(w, "profile.html", "Hello World!")
+// 	if err != nil {
+// 		http.Error(w, err.Error(), http.StatusInternalServerError)
+// 	}
+// }
+
+// func Handler() {
+// 	http.HandleFunc("/", viewHandler)
+// 	log.Fatal(http.ListenAndServe(":8080", nil))
+// }
