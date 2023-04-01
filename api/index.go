@@ -23,7 +23,10 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 			}
 			main {
 				display: flex;
+				margin: 0 auto;
+					max-width: 60vw;
 				justify-content: center;
+				flex-direction: column;
 			}
 			main li a {
 				color: cadetblue;
