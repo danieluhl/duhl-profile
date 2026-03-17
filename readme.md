@@ -3,9 +3,10 @@
 This is a profile page for me that will give some info about me and show my
 skill as a frontend platform engineer.
 
+## Stack
+
+- HTML
+- deployed in vercel for simple edge caching and deploys on push
 
 
 
-
-
-this also changes line 11
